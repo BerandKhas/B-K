@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لیست موجودی و قیمت محصولات</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background-color: #f4f4f4;
+    direction: rtl;
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px 15px;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px 60px 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 22px;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.site-link {
+    display: inline-block;
+    padding: 8px 22px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #000, #333);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.header-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* HEADER RIGHT - ADDRESS & PHONE */
+.header-right {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 700; /* بولد */
+    font-family: "Tahoma", "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* SOCIAL ICONS */
+.socials-bottom {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.socials-bottom img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* PRODUCTS */
+.products {
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* TABLE HEADER */
+.products-header {
+    display: grid;
+    grid-template-columns: 1fr 200px 150px;
+    background: #111;
+    color: #fff;
+    padding: 16px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* PRODUCT ITEM */
+.product-item {
+    display: grid;
+    grid-template-columns: 1fr 200px 150px;
+    padding: 14px 22px;
+    border-bottom: 1px solid #e6e6e6;
+    align-items: center;
+    font-size: 15px;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.price {
+    color: #c0001a;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.view-btn {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 16px;
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    width: fit-content;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .products-header, .product-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .product-item {
+        grid-template-rows: auto auto auto;
+        gap: 8px;
+        padding: 12px;
+    }
+    .view-btn {
+        margin: 0 auto;
+    }
+    .header-right {
+        font-size: 15px;
+        margin-top: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>لیست موجودی و قیمت محصولات کمپانی برند خاص</h1>
+        <div class="header-logo">
+            <img src="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png" alt="Brand Logo">
+        </div>
+        <a class="site-link" href="https://www.berandkhas.com" target="_blank">www.berandkhas.com</a>
+        <div class="header-right">
+            آدرس : خیابان پامنار کوچه مروی ، پاساژ آفتاب ، طبقه منفی 1 ، پلاک 8<br>
+            تماس : 02133933573 | 09120914575
+        </div>
+        <div class="socials-bottom">
+            <a href="https://t.me/berandkhas_company" target="_blank">
+                <img src="https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q">
+            </a>
+            <a href="https://instagram.com/berandkhas_company" target="_blank">
+                <img src="https://img.freepik.com/premium-psd/instagram-application-logo_23-2151544088.jpg">
+            </a>
+            <a href="https://chat.whatsapp.com/KKlEZeeOUzn8Zr8jsgjuSA" target="_blank">
+                <img src="https://img.freepik.com/premium-vector/art-illustration_1166422-325.jpg?semt=ais_hybrid&w=740&q=80">
+            </a>
+        </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+        <div class="products-header">
+            <div>نام محصول</div>
+            <div>قیمت</div>
+            <div>وضعیت</div>
+        </div>
+
+        <div class="product-item">
+            <div>کراتین مو حرفه‌ای</div>
+            <div class="price">3,500,000 تومان</div>
+            <a class="view-btn" href="https://www.berandkhas.com" target="_blank">دیدن محصول</a>
+        </div>
+
+        <div class="product-item">
+            <div>ماسک ترمیم‌کننده مو</div>
+            <div class="price">1,200,000 تومان</div>
+            <a class="view-btn" href="https://www.berandkhas.com" target="_blank">دیدن محصول</a>
+        </div>
+
+        <div class="product-item">
+            <div>شامپو بدون سولفات</div>
+            <div class="price">890,000 تومان</div>
+            <a class="view-btn" href="https://www.berandkhas.com" target="_blank">دیدن محصول</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
