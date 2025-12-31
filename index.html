@@ -2,15 +2,33 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <title>لیست موجودی و قیمت محصولات</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png">
+<link rel="apple-touch-icon" href="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png">
+
+<!-- MOBILE OPTIMIZATION -->
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
 <style>
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     background-color: #f4f4f4;
     direction: rtl;
     color: #222;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -25,7 +43,6 @@ body {
     border-radius: 16px;
     padding: 30px 20px 60px 20px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +67,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* MAIN LOGO (UNCHANGED) */
 .header-logo img {
     width: 150px;
     height: 150px;
@@ -57,27 +75,33 @@ body {
     margin-bottom: 15px;
 }
 
-/* HEADER RIGHT - ADDRESS & PHONE */
+/* ADDRESS */
 .header-right {
     font-size: 16px;
     line-height: 1.8;
-    font-weight: 700; /* بولد */
-    font-family: "Tahoma", "Segoe UI", Arial, sans-serif;
-    text-align: center;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
-/* SOCIAL ICONS */
+/* SOCIAL ICONS — ALL 30x30 */
 .socials-bottom {
     display: flex;
-    gap: 12px;
-    margin-top: 15px;
+    gap: 14px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .socials-bottom img {
     width: 35px;
     height: 35px;
     object-fit: contain;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.socials-bottom a:hover img {
+    transform: scale(1.1);
 }
 
 /* PRODUCTS */
@@ -85,7 +109,6 @@ body {
     background: #fff;
     margin-top: 30px;
     border-radius: 16px;
-    padding: 0;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     overflow: hidden;
 }
@@ -99,7 +122,6 @@ body {
     padding: 16px 22px;
     font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
 /* PRODUCT ITEM */
@@ -130,59 +152,77 @@ body {
     border-radius: 18px;
     font-size: 13px;
     font-weight: 600;
-    text-align: center;
     width: fit-content;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .products-header, .product-item {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .products-header {
+        display: none;
     }
+
     .product-item {
-        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
         gap: 8px;
         padding: 12px;
+        text-align: center;
     }
+
     .view-btn {
         margin: 0 auto;
     }
+
     .header-right {
         font-size: 15px;
-        margin-top: 15px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
     <div class="header">
         <h1>لیست موجودی و قیمت محصولات کمپانی برند خاص</h1>
+
         <div class="header-logo">
             <img src="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png" alt="Brand Logo">
         </div>
-        <a class="site-link" href="https://www.berandkhas.com" target="_blank">www.berandkhas.com</a>
+
+        <a class="site-link" href="https://www.berandkhas.com" target="_blank">
+            www.berandkhas.com
+        </a>
+
         <div class="header-right">
-            آدرس : خیابان پامنار کوچه مروی ، پاساژ آفتاب ، طبقه منفی 1 ، پلاک 8<br>
+            آدرس : خیابان پامنار کوچه مروی ، پاساژ آفتاب ، طبقه منفی 1 پلاک 8<br>
             تماس : 02133933573 | 09120914575
         </div>
+
+        <!-- SOCIAL LINKS -->
         <div class="socials-bottom">
             <a href="https://t.me/berandkhas_company" target="_blank">
                 <img src="https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q">
             </a>
+
             <a href="https://instagram.com/berandkhas_company" target="_blank">
                 <img src="https://img.freepik.com/premium-psd/instagram-application-logo_23-2151544088.jpg">
             </a>
+
+            <a href="https://rubika.ir/Berandkhas_company" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Rubika_Icon.png">
+            </a>
+
+            <a href="https://ble.ir/berandkhas_company" target="_blank">
+                <img src="https://biaupload.com/do.php?imgf=org-d9bab93398351.png">
+            </a>
+
             <a href="https://chat.whatsapp.com/KKlEZeeOUzn8Zr8jsgjuSA" target="_blank">
-                <img src="https://img.freepik.com/premium-vector/art-illustration_1166422-325.jpg?semt=ais_hybrid&w=740&q=80">
+                <img src="https://img.freepik.com/premium-vector/art-illustration_1166422-325.jpg">
             </a>
         </div>
     </div>
 
-    <!-- PRODUCTS -->
     <div class="products">
         <div class="products-header">
             <div>نام محصول</div>
@@ -191,7 +231,7 @@ body {
         </div>
 
         <div class="product-item">
-            <div>اسپری محافظ حرارتی دو فاز (15 کاره) </div>
+            <div>اسپری محافظ حرارتی دو فاز (15 کاره)</div>
             <div class="price">430,000 تومان</div>
             <a class="view-btn" href="https://berandkhas.com/product/2faz" target="_blank">دیدن محصول</a>
         </div>
