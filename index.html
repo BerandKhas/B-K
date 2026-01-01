@@ -6,33 +6,21 @@
 
 <title>لیست موجودی و قیمت محصولات</title>
 
-<!-- FAVICON -->
 <link rel="icon" type="image/png" href="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png">
 <link rel="apple-touch-icon" href="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png">
 
-<!-- MOBILE OPTIMIZATION -->
-<meta name="theme-color" content="#ffffff">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
 <style>
-html {
-    -webkit-text-size-adjust: 100%;
-}
-
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     background-color: #f4f4f4;
     direction: rtl;
     color: #222;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 10px 15px;
 }
@@ -41,8 +29,8 @@ body {
 .header {
     background: #fff;
     border-radius: 16px;
-    padding: 30px 20px 60px 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 25px 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,53 +38,50 @@ body {
 }
 
 .header h1 {
-    font-size: 22px;
-    margin: 0 0 12px 0;
+    font-size: 17px; /* کوچک و شیک */
+    margin: 0 0 15px 0;
     font-weight: 700;
+}
+
+.header-logo img {
+    display: block;
+    margin-bottom: 15px;
+    object-fit: contain;
 }
 
 .site-link {
     display: inline-block;
-    padding: 8px 22px;
+    padding: 6px 20px;
     border-radius: 10px;
-    background: linear-gradient(135deg, #000, #333);
+    background: #000;
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-/* MAIN LOGO (UNCHANGED) */
-.header-logo img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-/* ADDRESS */
 .header-right {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #444;
 }
 
-/* SOCIAL ICONS — ALL 30x30 */
+/* SOCIALS FIXED 35x35 */
 .socials-bottom {
     display: flex;
-    gap: 14px;
-    margin-top: 18px;
-    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
     justify-content: center;
+    align-items: center;
 }
 
 .socials-bottom img {
-    width: 35px;
-    height: 35px;
+    display: block;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 7px;
     transition: transform 0.2s ease;
 }
 
@@ -107,40 +92,41 @@ body {
 /* PRODUCTS */
 .products {
     background: #fff;
-    margin-top: 30px;
+    margin-top: 25px;
     border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     overflow: hidden;
 }
 
-/* TABLE HEADER */
 .products-header {
     display: grid;
-    grid-template-columns: 1fr 200px 150px;
+    grid-template-columns: 1fr 180px 130px;
     background: #111;
     color: #fff;
-    padding: 16px 22px;
-    font-size: 15px;
+    padding: 14px 22px;
+    font-size: 13px;
     font-weight: 700;
 }
 
-/* PRODUCT ITEM */
 .product-item {
     display: grid;
-    grid-template-columns: 1fr 200px 150px;
-    padding: 14px 22px;
-    border-bottom: 1px solid #e6e6e6;
+    grid-template-columns: 1fr 180px 130px;
+    padding: 12px 22px;
+    border-bottom: 1px solid #eee;
     align-items: center;
-    font-size: 15px;
 }
 
-.product-item:last-child {
-    border-bottom: none;
+.product-item:last-child { border-bottom: none; }
+
+.product-name {
+    font-weight: 700;
+    font-size: 14px; /* کوچک‌تر برای شیک بودن */
 }
 
 .price {
     color: #c0001a;
     font-weight: 700;
+    font-size: 14px;
     white-space: nowrap;
 }
 
@@ -148,33 +134,23 @@ body {
     background: #000;
     color: #fff;
     text-decoration: none;
-    padding: 7px 16px;
-    border-radius: 18px;
-    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 600;
-    width: fit-content;
+    text-align: center;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .products-header {
-        display: none;
-    }
-
+    .products-header { display: none; }
     .product-item {
         grid-template-columns: 1fr;
         gap: 8px;
-        padding: 12px;
+        padding: 15px;
         text-align: center;
     }
-
-    .view-btn {
-        margin: 0 auto;
-    }
-
-    .header-right {
-        font-size: 15px;
-    }
+    .view-btn { margin: 0 auto; width: fit-content; }
 }
 </style>
 </head>
@@ -187,38 +163,31 @@ body {
         <h1>لیست موجودی و قیمت محصولات کمپانی برند خاص</h1>
 
         <div class="header-logo">
-            <img src="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png" alt="Brand Logo">
+            <img src="https://biaupload.com/do.php?imgf=org-1406ceb56cb21.png" width="150" height="150" alt="Brand Logo">
         </div>
 
-        <a class="site-link" href="https://www.berandkhas.com" target="_blank">
-            www.berandkhas.com
-        </a>
+        <a class="site-link" href="https://www.berandkhas.com" target="_blank">www.berandkhas.com</a>
 
         <div class="header-right">
-            آدرس : خیابان پامنار کوچه مروی ، پاساژ آفتاب ، طبقه منفی 1 پلاک 8<br>
+             آدرس :  بازار بزرگ تهران ، خیابان پامنار کوچه مروی ، پاساژ آفتاب ، طبقه منفی 1 پلاک 8<br>
             تماس : 02133933573 | 09120914575
         </div>
 
-        <!-- SOCIAL LINKS -->
         <div class="socials-bottom">
-            <a href="https://t.me/berandkhas_company" target="_blank">
-                <img src="https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q">
-            </a>
-
             <a href="https://instagram.com/berandkhas_company" target="_blank">
-                <img src="https://img.freepik.com/premium-psd/instagram-application-logo_23-2151544088.jpg">
+                <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNTM1LXNvY2lhbC0wMDMucG5n.png" width="35" height="35" alt="Instagram">
             </a>
-
-            <a href="https://rubika.ir/Berandkhas_company" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Rubika_Icon.png">
+            <a href="https://t.me/berandkhas_company" target="_blank">
+                <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNTM1LXNvY2lhbC0wMjJhLnBuZw.png" width="35" height="35" alt="Telegram">
             </a>
-
-            <a href="https://ble.ir/berandkhas_company" target="_blank">
-                <img src="https://biaupload.com/do.php?imgf=org-d9bab93398351.png">
-            </a>
-
             <a href="https://chat.whatsapp.com/KKlEZeeOUzn8Zr8jsgjuSA" target="_blank">
-                <img src="https://img.freepik.com/premium-vector/art-illustration_1166422-325.jpg">
+                <img src="https://www.freeiconspng.com/uploads/whatsapp-logo-clipart-png-27.png" width="35" height="35" alt="WhatsApp">
+            </a>
+            <a href="https://rubika.ir/Berandkhas_company" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Rubika_Icon.png" width="35" height="35" alt="Rubika">
+            </a>
+            <a href="https://ble.ir/berandkhas_company" target="_blank">
+                <img src="https://biaupload.com/do.php?imgf=org-d9bab93398351.png" width="35" height="35" alt="Bale">
             </a>
         </div>
     </div>
@@ -231,25 +200,70 @@ body {
         </div>
 
         <div class="product-item">
-            <div>اسپری محافظ حرارتی دو فاز (15 کاره)</div>
+            <div class="product-name">اسپری محافظ حرارتی دو فاز (15 کاره)</div>
             <div class="price">430,000 تومان</div>
             <a class="view-btn" href="https://berandkhas.com/product/2faz" target="_blank">دیدن محصول</a>
         </div>
 
         <div class="product-item">
-            <div>روغن ارگان (BK)</div>
+            <div class="product-name">روغن ارگان (BK)</div>
             <div class="price">250,000 تومان</div>
             <a class="view-btn" href="https://berandkhas.com/product/argan" target="_blank">دیدن محصول</a>
         </div>
 
         <div class="product-item">
-            <div>روغن اکسیژن (BK)</div>
+            <div class="product-name">روغن اکسیژن (BK)</div>
             <div class="price">1,050,000 تومان</div>
             <a class="view-btn" href="https://berandkhas.com/product/oxygen" target="_blank">دیدن محصول</a>
         </div>
-    </div>
-
+		
+		  <div class="product-item">
+            <div class="product-name">ماسک داخل حمام بادیگارد (BK)</div>
+            <div class="price">850,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2385341" target="_blank">دیدن محصول</a>
+        </div>
+		
+		 <div class="product-item">
+            <div class="product-name">شیر مو (BK)</div>
+            <div class="price">250,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2421403" target="_blank">دیدن محصول</a>
+        </div>
+		
+		<div class="product-item">
+            <div class="product-name">ماسک دنس هیر (BK)</div>
+            <div class="price">360,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2446843" target="_blank">دیدن محصول</a>
+        </div>
+		
+		<div class="product-item">
+            <div class="product-name">پک جادویی شامپو و ماسک (BK)</div>
+            <div class="price">750,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2458994" target="_blank">دیدن محصول</a>
+        </div>
+		
+		<div class="product-item">
+            <div class="product-name">بوتاکس مو (BK)</div>
+            <div class="price">650,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2446780" target="_blank">دیدن محصول</a>
+        </div>
+		
+			<div class="product-item">
+            <div class="product-name">بستر ساز ال پی پی (BK)</div>
+            <div class="price">600,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2502132" target="_blank">دیدن محصول</a>
+        </div>
+		
+			<div class="product-item">
+            <div class="product-name">سوپر کراتین (BK)</div>
+            <div class="price">850,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2458576" target="_blank">دیدن محصول</a>
+        </div>
+		
+    <div class="product-item">
+            <div class="product-name">شامپو فری سولفات A پلاس (BK)</div>
+            <div class="price">300,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2458848" target="_blank">دیدن محصول</a>
+        </div>
 </div>
-
 </body>
 </html>
