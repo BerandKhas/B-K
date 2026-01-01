@@ -41,20 +41,23 @@ body {
     font-size: 18px; 
     margin: 0 0 15px 0;
     font-weight: 800;
-    color: #111;
 }
 
-/* MODERN UPDATE BOX */
+/* UPDATE BOX WITH ALARM EFFECT */
 .update-status {
     background: rgba(255, 50, 50, 0.05);
-    border: 1px solid rgba(255, 0, 0, 0.2);
+    border: 1.5px solid rgba(255, 0, 0, 0.3);
     padding: 10px 20px;
     border-radius: 50px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    animation: pulse-border 2s infinite;
+    /* انیمیشن چشمک زن آلارم */
+    animation: alarm-blink 1s infinite;
+}
+
+@keyframes alarm-blink {
+    0% { background-color: rgba(255, 50, 50, 0.05); border-color: rgba(255, 0, 0, 0.3); }
+    50% { background-color: rgba(255, 0, 0, 0.15); border-color: rgba(255, 0, 0, 0.8); }
+    100% { background-color: rgba(255, 50, 50, 0.05); border-color: rgba(255, 0, 0, 0.3); }
 }
 
 .update-status p {
@@ -62,12 +65,6 @@ body {
     font-size: 13px;
     font-weight: 700;
     color: #d32f2f;
-}
-
-@keyframes pulse-border {
-    0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.2); }
-    70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
 }
 
 .header-logo img {
@@ -88,10 +85,7 @@ body {
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 20px;
-    transition: 0.3s;
 }
-
-.site-link:hover { background: #333; transform: translateY(-2px); }
 
 .header-right {
     font-size: 14px;
@@ -101,27 +95,15 @@ body {
     color: #555;
 }
 
-/* SOCIALS WITH FLASHING ARROWS */
+/* SOCIALS */
 .social-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     margin-top: 10px;
+    width: 100%;
 }
-
-.arrow {
-    font-size: 24px;
-    color: #ff0000;
-    font-weight: bold;
-    animation: arrow-blink 0.8s infinite alternate;
-}
-
-@keyframes arrow-blink {
-    from { opacity: 0.2; transform: translateX(0); }
-    to { opacity: 1; transform: translateX(5px); }
-}
-
-.arrow-left { animation-direction: alternate-reverse; }
 
 .socials-bottom {
     display: flex;
@@ -136,10 +118,7 @@ body {
     height: 35px !important;
     object-fit: contain;
     border-radius: 8px;
-    transition: 0.3s;
 }
-
-.socials-bottom a:hover img { transform: scale(1.2) rotate(5deg); }
 
 /* PRODUCTS */
 .products {
@@ -169,9 +148,7 @@ body {
 }
 
 .product-item:last-child { border-bottom: none; }
-
 .product-name { font-weight: 700; font-size: 14px; }
-
 .price { color: #c0001a; font-weight: 700; font-size: 14px; white-space: nowrap; }
 
 .view-btn {
@@ -183,12 +160,9 @@ body {
     font-size: 12px;
     font-weight: 600;
     text-align: center;
-    transition: 0.3s;
 }
 
-.view-btn:hover { background: #d32f2f; }
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .products-header { display: none; }
     .product-item {
         grid-template-columns: 1fr;
@@ -197,7 +171,6 @@ body {
         text-align: center;
     }
     .view-btn { margin: 0 auto; width: 120px; }
-    .arrow { display: none; } /* حذف فلش در موبایل برای خلوت شدن */
 }
 </style>
 </head>
@@ -211,7 +184,7 @@ body {
 
         <div class="update-status">
             <p class="MuiTypography-root MuiTypography-button1 muirtl-1vbhkcf">
-                به‌روزرسانی شده در : <span id="current-date">پنج شنبه - 11 دی 1404</span>
+                به‌روزرسانی شده در: <span id="current-date">پنج شنبه - 11 دی 1404</span>
             </p>
         </div>
 
@@ -227,7 +200,6 @@ body {
         </div>
 
         <div class="social-wrapper">
-            <div class="arrow">←</div>
             <div class="socials-bottom">
                 <a href="https://instagram.com/berandkhas_company" target="_blank">
                     <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNTM1LXNvY2lhbC0wMDMucG5n.png" alt="Instagram">
@@ -245,7 +217,6 @@ body {
                     <img src="https://biaupload.com/do.php?imgf=org-d9bab93398351.png" alt="Bale">
                 </a>
             </div>
-            <div class="arrow arrow-left">→</div>
         </div>
     </div>
 
@@ -258,20 +229,20 @@ body {
 
         <div class="product-item">
             <div class="product-name">اسپری محافظ حرارتی دو فاز (15 کاره)</div>
-            <div class="price">430,000 تومان</div>
-            <a class="view-btn" href="https://berandkhas.com/product/2faz" target="_blank">دیدن محصول</a>
+            <div class="price">530,000 تومان</div>
+            <a class="view-btn" href="https://berandkhas.com/product/2407073" target="_blank">دیدن محصول</a>
         </div>
 
         <div class="product-item">
             <div class="product-name">روغن ارگان (BK)</div>
             <div class="price">250,000 تومان</div>
-            <a class="view-btn" href="https://berandkhas.com/product/argan" target="_blank">دیدن محصول</a>
+            <a class="view-btn" href="https://berandkhas.com/product/2450330" target="_blank">دیدن محصول</a>
         </div>
 
         <div class="product-item">
             <div class="product-name">روغن اکسیژن (BK)</div>
             <div class="price">1,050,000 تومان</div>
-            <a class="view-btn" href="https://berandkhas.com/product/oxygen" target="_blank">دیدن محصول</a>
+            <a class="view-btn" href="https://berandkhas.com/product/2450364" target="_blank">دیدن محصول</a>
         </div>
 
         <div class="product-item">
@@ -322,15 +293,8 @@ body {
             <a class="view-btn" href="https://berandkhas.com/product/2458848" target="_blank">دیدن محصول</a>
         </div>
     </div>
-
-</div>
-
 <script>
-    // اسکریپت ساده برای نمایش تاریخ امروز به شمسی در صورت نیاز یا متن ثابت شما
-    // در اینجا متن ثابت شما قرار گرفته است
     document.getElementById('current-date').innerText = "پنج شنبه - 11 دی 1404";
 </script>
-
 </body>
 </html>
-
