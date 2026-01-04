@@ -183,9 +183,9 @@ body {
         <h1>لیست قیمت محصولات کمپانی برند خاص</h1>
 
         <div class="update-status">
-            <p class="MuiTypography-root MuiTypography-button1 muirtl-1vbhkcf">
-                به‌روزرسانی شده در : <span id="current-date">پنج شنبه - 11 دی 1404</span>
-            </p>
+           <p class="MuiTypography-root MuiTypography-button1 muirtl-1vbhkcf">
+    به‌روزرسانی شده در :
+    <span id="current-date"></span></p>
         </div>
 
         <div class="header-logo">
@@ -294,10 +294,48 @@ body {
         </div>
     </div>
 <script>
-    document.getElementById('current-date').innerText = "پنج شنبه - 11 دی 1404";
+(function () {
+    const days = ["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"];
+    const months = ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
+
+    function toJalali(g_y, g_m, g_d) {
+        const g_dm = [0,31,59,90,120,151,181,212,243,273,304,334];
+        let jy = g_y > 1600 ? 979 : 0;
+        g_y -= g_y > 1600 ? 1600 : 621;
+        let gy2 = g_m > 2 ? g_y + 1 : g_y;
+        let daysTotal = 365*g_y + Math.floor((gy2+3)/4)
+            - Math.floor((gy2+99)/100) + Math.floor((gy2+399)/400)
+            + g_d + g_dm[g_m-1] - 80;
+
+        jy += 33*Math.floor(daysTotal/12053);
+        daysTotal %= 12053;
+        jy += 4*Math.floor(daysTotal/1461);
+        daysTotal %= 1461;
+
+        if (daysTotal > 365) {
+            jy += Math.floor((daysTotal-1)/365);
+            daysTotal = (daysTotal-1)%365;
+        }
+
+        let jm = daysTotal < 186
+            ? 1 + Math.floor(daysTotal/31)
+            : 7 + Math.floor((daysTotal-186)/30);
+
+        let jd = 1 + (daysTotal < 186
+            ? daysTotal % 31
+            : (daysTotal-186) % 30);
+
+        return [jy, jm, jd];
+    }
+
+    const d = new Date();
+    const j = toJalali(d.getFullYear(), d.getMonth()+1, d.getDate());
+
+    document.getElementById("current-date").innerText =
+        days[d.getDay()] + " - " + j[2] + " " + months[j[1]-1];
+})();
 </script>
 </body>
 </html>
-
 
 
